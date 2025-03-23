@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio Ousado</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            text-align: center;
+            padding: 20px;
+        }
+        h1 {
+            color: #e74c3c;
+        }
+        .container {
+            background: white;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            margin: auto;
+            max-width: 600px;
+        }
+        button {
+            background-color: #e74c3c;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #c0392b;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Desafio Ousado</h1>
+    <p>Escolha um jogador para responder a pergunta ou realizar o desafio!</p>
+    
+    <div id="player"></div>
+    <div id="challenge"></div>
+    
+    <button onclick="nextChallenge()">Próximo Desafio</button>
+</div>
+
+<script>
+    const players = ["ARTHUR", "MAX", "ANGELINA", "KEVEN"];
+    const challenges = [
+        "Conte a sua fantasia sexual mais ousada.",
+        "Envie uma mensagem sexy para alguém do grupo.",
+        "Faça uma dança sensual por 30 segundos.",
+        "Descreva o que você faria em um encontro perfeito.",
+        "Diga uma parte do seu corpo que você gostaria de mudar e por quê.",
+        "Qual foi a sua experiência mais embaraçosa relacionada a sexo?",
+        "Se você pudesse ter um encontro com qualquer pessoa do mundo, quem seria?",
+        "Qual é o seu maior desejo sexual?",
+        "Conte sobre a sua primeira vez.",
+        "Qual é a sua posição sexual favorita e por quê?",
+        "Dê um beijo em alguém do grupo (ou em uma parte do corpo, se preferir).",
+        "Descreva o beijo mais inesquecível que você já teve.",
+        "Qual é o seu tipo de beijo favorito (beijo na boca, beijo na bochecha, etc.)?",
+        "Se você pudesse beijar qualquer celebridade, quem seria?",
+        "Qual foi o lugar mais inusitado onde você já deu um beijo?"
+    ];
+
+    function nextChallenge() {
+        const player = players[Math.floor(Math.random() * players.length)];
+        const challenge = challenges[Math.floor(Math.random() * challenges.length)];
+        
+        document.getElementById("player").innerText = `Jogador: ${player}`;
+        document.getElementById("challenge").innerText = `Desafio: ${challenge}`;
+    }
+</script>
+
+</body>
+</html>
